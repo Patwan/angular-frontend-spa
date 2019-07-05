@@ -1,0 +1,35 @@
+<div class="mt-4 col-10 offset-1">
+    <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Age (Years)</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userData">
+       <td>
+       		{{ user.name}}
+       </td>
+       <td>
+       		{{ user.age}}
+       </td>
+       <td>
+       		{{ user.gender}}
+       </td>
+       <td>
+        <button class="btn btn-primary" (click)="edit(user.id)">Edit</button>
+        <span *ngIf="user.confirmDelete">
+          <span> Are you sure you want to delete ?</span>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Yes </button>
+          <button class="btn btn-primary" (click)="user.confirmDelete=false">No </button>
+        </span>
+        <button *ngIf="!user.confirmDelete" class="btn btn-danger" (click)="user.confirmDelete=true">Delete</button>
+       </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+         

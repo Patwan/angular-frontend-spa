@@ -1,0 +1,81 @@
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+         <!-- Form-->
+<form #editForm="ngForm" (ngSubmit)="onSubmit(editForm)">
+    <!--Errors-->
+    <div class="alert alert-danger" [hidden]="!error">
+        {{ error }}
+    </div>
+<!--Children details-->
+<div class="card-header childheader">Update Details</div>
+    <div class="card-body">
+         <div class="form-group row">
+         <div class="col-sm-12">
+            <label for="childFirstName">Child Name</label>
+            <input 
+                type="text" 
+                name="childName" 
+                class="form-control" 
+                [ngModel]="singleUser?.name"
+                id="childName" 
+                placeholder="Child FirstName">
+        </div>
+    </div>
+    <div class="form-group row">
+         <div class="col-sm-6">
+             <label for="childAge">Child Age</label>
+            <select 
+                class="form-control" 
+                id="chAge" 
+                name="childAge"
+                [ngModel]="singleUser?.age" 
+                required>
+                <option value="" selected disabled> Child's Age</option>
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>
+                <option value="10"> 10 </option>
+                <option value="11"> 11 </option>
+                <option value="12"> 12 </option>
+                <option value="13"> 13 </option>
+                <option value="14"> 14 </option>
+                <option value="15"> 15 </option>
+                <option value="16"> 16 </option>
+                <option value="17"> 17 </option>
+                <option value="18"> 18 </option>
+            </select>
+        </div>
+        <div class="col-sm-6">
+            <label for="childGender">Child Gender</label>
+            <select 
+                class="form-control" 
+                id="childGender" 
+                name="childGender" 
+                [ngModel]="singleUser?.gender" 
+                required>
+            <option value="" style="display:none"> Child's Gender</option>
+                <option value="Male"> Male</option>
+                <option value="Female"> Female </option>
+            </select>
+        </div>
+    </div>
+       <!--END children-->
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <input type="hidden" name="userId" [ngModel]="singleUser?.id" >
+            <button 
+                type="submit" 
+                class="btn btn-lg btn-success btn-block" 
+                [disabled]="!editForm.valid">Update Details </button>
+        </div>
+    </div>
+    </div>
+</form>
+  </div>  
+</div>
