@@ -15,7 +15,7 @@ export class AuthService {
       })
   };
   
-  private baseUrl = 'http://localhost/Laravel-anngular-spa/backend/public/api';
+  private baseUrl = 'https://test-app.pwebk.com/public/api';
 
   constructor(
     private http:HttpClient,

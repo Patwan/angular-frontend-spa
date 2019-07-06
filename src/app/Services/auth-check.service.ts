@@ -8,7 +8,7 @@ import { TokenService } from './token.service';
 export class AuthCheckService {
 
 	//Check logged in userName
-	private userName = new BehaviorSubject;
+	private userName = new BehaviorSubject(null);
  	checkUser$ = this.userName.asObservable();
 
 

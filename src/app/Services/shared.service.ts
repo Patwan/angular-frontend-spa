@@ -9,15 +9,15 @@ import { TokenService } from './token.service';
 export class SharedService {
 	
 	//All children
-	private children = new BehaviorSubject;
+	private children = new BehaviorSubject(null);
  	checkAll$ = this.children.asObservable();
 
  	//Edit Single Child
- 	private singleChild = new BehaviorSubject;
+ 	private singleChild = new BehaviorSubject(null);
 	 edit$ = this.singleChild.asObservable();
 	 
 	//Updated data after edit method
- 	private update = new BehaviorSubject;
+ 	private update = new BehaviorSubject(null);
  	updates$ = this.update.asObservable();
 
 	childData(data:any){
